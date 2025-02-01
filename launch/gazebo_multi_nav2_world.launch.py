@@ -34,8 +34,8 @@ def generate_launch_description():
     robots = [
         {'name': 'tb1', 'x_pose': '-1.5', 'y_pose': '-0.5', 'z_pose': 0.01},
         {'name': 'tb2', 'x_pose': '-1.5', 'y_pose': '0.5', 'z_pose': 0.01},
-        {'name': 'tb3', 'x_pose': '1.5', 'y_pose': '-0.5', 'z_pose': 0.01},
-        {'name': 'tb4', 'x_pose': '1.5', 'y_pose': '0.5', 'z_pose': 0.01},
+        # {'name': 'tb3', 'x_pose': '1.5', 'y_pose': '-0.5', 'z_pose': 0.01},
+        # {'name': 'tb4', 'x_pose': '1.5', 'y_pose': '0.5', 'z_pose': 0.01},
         # ...
         # ...
         ]
@@ -247,6 +247,8 @@ def generate_launch_description():
             event_handler=OnProcessExit(
                 target_action=last_action,
                 on_exit=[initial_pose_cmd, rviz_cmd, drive_turtlebot3_burger],
+                #on_exit=[initial_pose_cmd],
+
             )
         )
 
