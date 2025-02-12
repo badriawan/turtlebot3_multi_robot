@@ -120,14 +120,14 @@ def generate_launch_description():
 
     last_action = None
 
-    map_yaml_file = LaunchConfiguration('map')
-    declare_map_yaml_cmd = DeclareLaunchArgument(
-        'map',
-        default_value=os.path.join(
-            turtlebot3_multi_robot, 'maps', 'turtlebot3_house.yaml'),
-        description='Full path to map file to load')
+    # map_yaml_file = LaunchConfiguration('map')
+    # declare_map_yaml_cmd = DeclareLaunchArgument(
+    #     'map',
+    #     default_value=os.path.join(
+    #         turtlebot3_multi_robot, 'maps', 'turtlebot3_house.yaml'),
+    #     description='Full path to map file to load')
     
-    ld.add_action(declare_map_yaml_cmd)
+    # ld.add_action(declare_map_yaml_cmd)
 
     # Spawn turtlebot3 instances in gazebo
     for robot in robots:
@@ -169,8 +169,8 @@ def generate_launch_description():
                                     'slam': 'False',
                                     'namespace': namespace,
                                     'use_namespace': 'True',
-                                    'map': map_yaml_file,
-                                    'map_server': 'False',
+                                    'map': '',
+                                    'map_server': 'True',
                                     'params_file': params_file,
                                     'default_bt_xml_filename': os.path.join(
                                         get_package_share_directory('nav2_bt_navigator'),
